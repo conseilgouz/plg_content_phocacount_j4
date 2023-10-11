@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension group="content" method="upgrade" type="plugin" version="4">
 	<name>plg_content_phocacount</name>
-	<creationDate>2023/03/30</creationDate>
+	<creationDate>2023-10-11</creationDate>
 	<author>ConseilGouz)</author>
 	<authorEmail></authorEmail>
 	<authorUrl>www.conseilgouz.com</authorUrl>
 	<copyright>ConseilGouz</copyright>
 	<license>GNU/GPL</license>
-	<version>2.0.1</version>
+	<version>2.0.2</version>
 	<scriptfile>script.php</scriptfile>
 	<changelogurl>https://raw.githubusercontent.com/conseilgouz/plg_content_phocacount_j4/master/plg_content_phocacount_changelog.xml</changelogurl>
 	<description>PLG_CONTENT_PHOCACOUNT_DESCRIPTION</description>

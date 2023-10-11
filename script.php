@@ -1,17 +1,18 @@
 <?php
 /**
-* Phocacount Plugin  - Joomla 4.x Module 
-* Version			: 2.0.0
+* Phocacount Plugin  - Joomla 4.x/5.x plugin
+* Version			: 2.0.2
 * copyright 		: Copyright (C) 2023 ConseilGouz. All rights reserved.
-* license    		: http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+* license    		: https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
 */
 // No direct access to this file
 defined('_JEXEC') or die;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
-use Joomla\CMS\Filesystem\Folder;
+use Joomla\Filesystem\Folder;
 use Joomla\CMS\Version;
-use Joomla\CMS\Filesystem\File;
+use Joomla\Filesystem\File;
+use Joomla\CMS\Log\Log;
 
 class plgcontentphocacountInstallerScript
 {
@@ -104,7 +105,7 @@ class plgcontentphocacountInstallerScript
 	        $db->execute();
         }
         catch (RuntimeException $e) {
-            JLog::add('unable to enable '.$this->name, JLog::ERROR, 'jerror');
+            Log::add('unable to enable '.$this->name, Log::ERROR, 'jerror');
         }
 
 	}
@@ -144,7 +145,7 @@ class plgcontentphocacountInstallerScript
 	}
 	private function uninstallInstaller()
 	{
-		if ( ! JFolder::exists(JPATH_PLUGINS . '/system/' . $this->installerName)) {
+		if ( ! is_dir(JPATH_PLUGINS . '/system/' . $this->installerName)) {
 			return;
 		}
 		$this->delete([
